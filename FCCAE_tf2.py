@@ -150,8 +150,11 @@ def train_fccae(arrx2_float_data_train = None,
 		arrx2_float_data_train = arrx2_float_data_train.reshape(-1,arrx2_float_data_train.shape[-1])
 	if len(arrx2_float_data_val.shape)>2:
 		arrx2_float_data_val = arrx2_float_data_val.reshape(-1,arrx2_float_data_val.shape[-1])
-	if len(arrx2_float_data_test.shape)>2:
-		arrx2_float_data_test = arrx2_float_data_test.reshape(-1,arrx2_float_data_test.shape[-1])
+	try:
+		if len(arrx2_float_data_test.shape)>2:
+			arrx2_float_data_test = arrx2_float_data_test.reshape(-1,arrx2_float_data_test.shape[-1])
+	except:
+		pass
 
 
 	if not os.path.isdir(str_saving_path+"/logs/"):
