@@ -1,2 +1,2 @@
-# DimensionalityReduction
+# Dimensionality Reduction
 To be written..
