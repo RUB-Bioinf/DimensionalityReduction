@@ -19,21 +19,6 @@ from tensorflow.keras import Model, Input
 from tensorflow.keras.layers import Dense, BatchNormalization, Activation
 
 
-# GPU settings - only take the first gpu
-os.environ["VISIBLE_DEVICES"] = '0'
-os.environ["CUDA_VISIBLE_DEVICES"] = '0'
-
-gpus = tf.config.experimental.list_physical_devices('GPU')
-if gpus:
-    try:
-        for gpu in gpus:
-            logical_gpus = tf.config.experimental.list_logical_devices('GPU')
-            print(len(gpus), " Physical GPUs, ",len(logical_gpus)," Logical GPUs")
-    except RuntimeError as e:
-        print(e)
-
-
-
 #----------------------- Eager execution -------------
 #tf.config.run_functions_eagerly(False)
 tf.compat.v1.disable_eager_execution()
@@ -165,11 +150,10 @@ def train_fccae(arrx2_float_data_train = None,
 		arrx2_float_data_train = arrx2_float_data_train.reshape(-1,arrx2_float_data_train.shape[-1])
 	if len(arrx2_float_data_val.shape)>2:
 		arrx2_float_data_val = arrx2_float_data_val.reshape(-1,arrx2_float_data_val.shape[-1])
-	try:
+	
+	if arrx2_float_data_test is not None:
 		if len(arrx2_float_data_test.shape)>2:
 			arrx2_float_data_test = arrx2_float_data_test.reshape(-1,arrx2_float_data_test.shape[-1])
-	except:
-		pass
 
 
 	if not os.path.isdir(str_saving_path+"/logs/"):
@@ -241,7 +225,7 @@ def train_fccae(arrx2_float_data_train = None,
 
 
 	#Normalize and predict test data if given as an argument
-	if arrx2_float_data_test:
+	if arrx2_float_data_test is not None:
 		if bool_l2_normalize_data:
 			arrx2_float_data_test =  skp.normalize(arrx2_float_data_test, norm='l2', axis=int_norm_axis, copy=True, return_norm=False)
 
@@ -258,5 +242,5 @@ def train_fccae(arrx2_float_data_train = None,
 if __name__=="__main__":
 
 	arr = np.random.rand(200, 427)
-	train_fccae(arr,arr, list_hidden_layers = [ {'n_nodes': 256 }, { 'n_nodes': 128 },{ 'n_nodes': 64 }])
+	train_fccae(arr,arr,arr, list_hidden_layers = [ {'n_nodes': 256 }, { 'n_nodes': 128 },{ 'n_nodes': 64 }])
 
