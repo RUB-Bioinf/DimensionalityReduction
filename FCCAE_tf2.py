@@ -19,6 +19,21 @@ from tensorflow.keras import Model, Input
 from tensorflow.keras.layers import Dense, BatchNormalization, Activation
 
 
+# GPU settings - only take the first gpu
+os.environ["VISIBLE_DEVICES"] = '0'
+os.environ["CUDA_VISIBLE_DEVICES"] = '0'
+
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+    try:
+        for gpu in gpus:
+            logical_gpus = tf.config.experimental.list_logical_devices('GPU')
+            print(len(gpus), " Physical GPUs, ",len(logical_gpus)," Logical GPUs")
+    except RuntimeError as e:
+        print(e)
+
+
+
 #----------------------- Eager execution -------------
 #tf.config.run_functions_eagerly(False)
 tf.compat.v1.disable_eager_execution()
