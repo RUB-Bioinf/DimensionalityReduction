@@ -70,9 +70,9 @@ def perform_pca(arrx2_float_data,
 	
 	#Save pca fit model & scaler
 	print("   Saving pca model and scaler to .pkl ...")
-	pk.dump(model, open(str_saving_path + 'pca.pkl','wb'))
+	pk.dump(model, open(str_saving_path + '/pca.pkl','wb'))
 	if bool_standardize:
-		pk.dump(sc, open(str_saving_path + 'scaler_pca.pkl','wb'))
+		pk.dump(sc, open(str_saving_path + '/scaler_pca.pkl','wb'))
 
 	print("\n3. Apply dimensional reduction to data ..")
 	s = t()
