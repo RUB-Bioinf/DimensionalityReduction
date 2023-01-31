@@ -24,9 +24,8 @@ Dimensionality reduction in infrared microscopy is aiming to preserve both spati
 ## Overview
 
 This repository contains four different scripts:
-- PCA_tf2.py  : Performs principle component analysis on spectral data of shape (X\*Y,spectra) with *n_components*. Data can be standarized such that they have a mean of 0 and standard deviation.
-	of 1. 
-- UMAP_tf2.py : Performs uniform manifold approximation and projection on data of shape (X\*Y,spectra) with *n_neighbors, n_components, min_dist, metric*. Data can be standarized such that they have a mean of 0 and standard deviation. 
+- PCA_tf2.py  : Performs principle component analysis on spectral data of shape (X\*Y,s pectra) with *n_components*. Data can be standarized such that they have a mean of 0 and standard deviation of 1. 
+- UMAP_tf2.py : Performs uniform manifold approximation and projection on data of shape (X\*Y, spectra) with *n_neighbors, n_components, min_dist and metric*. Data can be standarized such that they have a mean of 0 and standard deviation of 1. 
 - FCCAE_tf2.py: Training of the entire stacked autoencoder from scratch, yielding a fully connected contractive autoencoder with Tensorflow.
 - SCAE_tf2.py : Training of a series of stacked contractive autoencoders which are trained with one hidden layer each and are afterwards connected to form a deep autoencoder with Tensorflow.
 
@@ -40,6 +39,8 @@ Learn more [here](https://github.com/RUB-Bioinf/DimensionalityReduction/wiki/Usa
 
 
 
-## Contact
-Contact us on our homepage via:
-http://www.bioinf.rub.de/contact/index.html.en
+## Correspondence
+
+[**Prof. Dr. Axel Mosig**](mailto:axel.mosig@rub.de): Bioinformatics, Center for Protein Diagnostics (ProDi), Ruhr-University Bochum, Bochum, Germany
+
+http://www.bioinf.rub.de/
