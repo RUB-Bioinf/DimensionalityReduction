@@ -18,7 +18,7 @@ np.random.seed(seed_value)
 
 
 def perform_umap(arrx2_float_data,
-				str_saving_path: str = ".",
+				str_saving_path: str = "",
 				int_comp: int = 16, 
 				int_neigh: int = 15, 
 				float_min_dist: float = 0.1,
@@ -85,7 +85,7 @@ def perform_umap(arrx2_float_data,
 
 
 def load_umap_model(arrx2_float_data,
-				str_saving_path: str = ".",
+				str_saving_path: str = "",
 				str_data_name: str = "test", 
 				str_path_umap_model = "umap_neigh15_dist0.1_metriccorrelation_comp2_model.pkl",
 				bool_standardize: bool = True,

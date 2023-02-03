@@ -3,8 +3,6 @@ author: dajmue
 date: last updated: Jan, 2023
 """
 
-import numpy as np 
-import os, random
 
 #------------------------ Seed ------------------------ 
 seed_value = 0
@@ -19,7 +17,7 @@ np.random.seed(seed_value)
 
 def perform_pca(arrx2_float_data,
 				int_comp: int = 16,
-				str_saving_path: str =".",
+				str_saving_path: str ="",
 				bool_standardize: bool = True):
 
 	"""
@@ -28,7 +26,7 @@ def perform_pca(arrx2_float_data,
 	such that they have a mean of 0 and standard deviation 
 	of 1. 
 	"""
-
+	import os, sys
 	import numpy as np
 	import pandas as pd
 	import matplotlib.pyplot as plt
@@ -134,7 +132,7 @@ def perform_pca(arrx2_float_data,
 def load_pca_model(arrx2_float_data,
 					str_data_name: str = "test",
 					int_comp: int = 16,
-					str_saving_path: str = ".",
+					str_saving_path: str = "",
 					str_path_pca_model = None,
 					bool_standardize: bool = True,
 					str_path_scaler_model = None):
@@ -146,6 +144,7 @@ def load_pca_model(arrx2_float_data,
 	data was standarized in the training process. 
 	"""
 
+	import os, sys
 	import pickle as pk
 	import numpy as np
 	from sklearn.decomposition import PCA

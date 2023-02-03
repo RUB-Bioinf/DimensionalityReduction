@@ -154,7 +154,7 @@ def train_scae(arrx2_float_data_train = None,
 			  int_norm_axis: int = 1,
 			  list_hidden_layers: dict = [ {'n_nodes': 256 }, { 'n_nodes': 128 }, { 'n_nodes': 64 },\
 										   { 'n_nodes': 32 }, { 'n_nodes': 16 } ],
-			  str_saving_path: str =".",
+			  str_saving_path: str ="",
 			  bool_show_summary: bool = False
 			  ):
 	''' 

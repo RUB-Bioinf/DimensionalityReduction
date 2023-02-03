@@ -123,7 +123,7 @@ def train_fccae(arrx2_float_data_train = None,
 				arrx2_float_data_val = None, 
 				arrx2_float_data_test = None,
 				bool_model_avail = False,
-				str_path_to_weights = ".",
+				str_path_to_weights = "",
 				int_epochs: int = 5,
 				int_epoch_start: int = 0,
 				early_stopping_epochs: int = 200,
@@ -133,7 +133,7 @@ def train_fccae(arrx2_float_data_train = None,
 				int_norm_axis: int = 1,
 				list_hidden_layers: dict = [ {'n_nodes': 256 }, { 'n_nodes': 128 }, { 'n_nodes': 64 },\
 											 { 'n_nodes': 32 }, { 'n_nodes': 16 } ],
-				str_saving_path: str =".",
+				str_saving_path: str ="",
 				bool_show_summary: bool = False
 				):
 
