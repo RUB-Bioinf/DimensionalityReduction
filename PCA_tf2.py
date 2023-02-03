@@ -2,7 +2,8 @@
 author: dajmue
 date: last updated: Jan, 2023
 """
-
+import numpy as np 
+import os, random
 
 #------------------------ Seed ------------------------ 
 seed_value = 0
